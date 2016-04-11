@@ -1,10 +1,18 @@
 source 'https://rubygems.org'
 
+# Integrate bootstrap with rails
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'autoprefixer-rails'
+
+# Include simple form gem to integrate with bootstrap
+gem 'simple_form'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# gem 'sqlite3'
+# gem 'mysql', '~> 6.1.6'
+gem 'mysql2', '~> 0.4.3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

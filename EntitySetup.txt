@@ -1,0 +1,46 @@
+Event:
+	id
+	Title: string
+	Description: Text
+	Start_Time: DateTime
+	has_many: WorkerPosition
+	
+WorkerPosition:
+	eventId
+	Description: string
+	EstimatedHours: int
+	workerId
+	
+Worker:
+	FirstName: string
+	LastName: string
+	EmailAddress: string
+	PhoneNumber: string
+
+WorkerConflict:
+
+HoursUpdate:
+	workerId
+	semester
+	DateTime
+	hours
+	
+
+//Get estimated hours for a specified worker
+SELECT SUM(hours) + (
+	//Get last manual hours update
+	SELECT hours FROM hoursUpdate
+	WHERE workerId = @workerId
+	ORDER BY dateTime DSC
+	LIMIT 1
+)
+FROM workerPosition
+JOIN HoursUpdate ON workerPosition.workerId = hoursUpdate.workerId
+JOIN event ON workerPosition.eventId = event.id
+WHERE event.startTime BETWEEN (
+	//Get date of last manual hours update
+	SELECT dateTime FROM hoursUpdate
+	WHERE workerId = @workerId
+	ORDER BY dateTime DSC
+	LIMIT 1
+	) AND @endTime
