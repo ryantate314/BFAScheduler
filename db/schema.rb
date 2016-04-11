@@ -13,13 +13,4 @@
 
 ActiveRecord::Schema.define(version: 20160328222416) do
 
-  create_table "workers", force: :cascade do |t|
-    t.string   "firstName",  limit: 255
-    t.string   "lastName",   limit: 255
-    t.string   "email",      limit: 255
-    t.string   "phone",      limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-  end
-
 end
