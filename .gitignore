@@ -15,3 +15,6 @@
 /log/*
 !/log/.keep
 /tmp
+
+#Ignore configuration files and require the user to maintain their own development versions.
+/config

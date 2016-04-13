@@ -3,11 +3,9 @@
 one:
   id: 
   name: MyString
-  emailAddress: MyString
-  phoneNumber: MyString
+  startTime: 
 
 two:
   id: 
   name: MyString
-  emailAddress: MyString
-  phoneNumber: MyString
+  startTime: 
